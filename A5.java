@@ -11,20 +11,17 @@ public class A5 {
 		int num;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Please enter 5 integers ranging from 1 to 100000");
-			int i=0;
 			try {
-				while(i<5) {
-                    num=sc.nextInt();
-					a[i++]=num;	
+				for(int i = 0;i<5;++i) {
+                    			num=sc.nextInt();
+					a[i]=num;	
 				}
-				int j = i;
-				while (i > 0) {
-					--i;
-					while (j > 0 ) {
-						if (a[i] == a[j]) {
+				for (int j = 0; j < 5; j++) {
+					for (int j2 = j; j2 < 5; j2++) {
+						if(a[j] == a[j2+1])
+						{
 							throw new CustomException(a[j]);
 						}
-						--j;	
 					}
 				}
 			System.out.println("No duplicate numbers!");
